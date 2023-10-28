@@ -1,0 +1,9 @@
+# program name
+decode
+./a.out
+
+# Object Dir
+obj/
+
+# Object Files
+.o
