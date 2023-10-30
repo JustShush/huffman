@@ -8,14 +8,9 @@ void decodeFile(FILE *inputFile, FILE *outputFile, t_node *root)
 	{
 		if (ch == '0')
 			current = current->child[0];
-		else if (ch == '\n')
-		{
-			fputc('\n', outputFile);
-			current = root;
-		}
 		else
 			current = current->child[1];
-		if (!current->child[0] && !current->child[1])
+		if ((!current->child[0] && !current->child[1]) || current->letter == '\n')
 		{
 			fputc(current->letter, outputFile);
 			current = root;
